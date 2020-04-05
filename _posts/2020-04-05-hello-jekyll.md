@@ -16,7 +16,7 @@ tags: jekyll github
 
 ## Jekyll 설치 및 실행
 
-> Ruby 2.4 이상 버전 필요
+> Ruby 2.4 이상 버전 필요 (ruby 2.7 사용)
 >
 > mac의 경우 Command Line Tools 설치 필요
 
@@ -72,3 +72,7 @@ ex) `2020-04-05-hello-jekyll.md`
 #### Post 올리기
 
  `_posts`에 추가 한 파일을 git에 push하면 끝.
+ 
+ {% plantuml %}
+ [First] - [Second]
+ {% endplantuml %}
