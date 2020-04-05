@@ -37,6 +37,7 @@ gems: [jekyll-paginate, jekyll-plantuml]
 $jekyll s
 ```
 2. 샘플 uml
-  {% plantuml %}
-  [First] - [Second]
-  {% endplantuml %}
+
+{% plantuml %}
+[First] - [Second]
+{% endplantuml %}
