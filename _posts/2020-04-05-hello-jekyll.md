@@ -72,7 +72,3 @@ ex) `2020-04-05-hello-jekyll.md`
 #### Post 올리기
 
  `_posts`에 추가 한 파일을 git에 push하면 끝.
- 
- {% plantuml %}
- [First] - [Second]
- {% endplantuml %}
