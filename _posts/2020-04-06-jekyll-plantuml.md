@@ -36,8 +36,7 @@ gems: [jekyll-paginate, jekyll-plantuml]
 ```bash
 $jekyll s
 ```
-2. 샘플 uml
 
-{% plantuml %}
-[First] - [Second]
-{% endplantuml %}
+## 이슈..
+local에서는 정상 동작하지만 `github pages`에서 `jekyll-palntulm`을 지원을 안해서 빌드 실패가 된다.
+우선 차선책으로 uml을 image로 올려서 사용 예정.
