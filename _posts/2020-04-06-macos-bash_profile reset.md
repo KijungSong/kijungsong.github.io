@@ -2,7 +2,7 @@
 layout: post
 title:  "zsh - MacOS 재부팅시 ~/.bash_profile 미적용"
 date: 2020-04-06 00:02:05 +0900
-categories: jekyll
+categories: shell
 tags: macos zsh .bash_profile .zshrc
 ---
 * content
