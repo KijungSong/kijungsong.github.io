@@ -5,6 +5,9 @@ date:   2020-04-10 10:06:20 +0900
 categories: python
 tags: python
 ---
+* content
+{:toc}
+
 대학교 프로그래밍 입문언어라는 python에 대한 기본적은 내용 간략히 정리.
 자세한 내용은 [공식 홈페이지의 레퍼런스](https://www.python.org/doc/) 참고하자.
 
