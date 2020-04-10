@@ -3,7 +3,7 @@ layout: post
 title:  "Jekyll에 codepen 첨부하기"
 date:   2020-04-08 11:09:20 +0900
 categories: etc
-tags: codepen javascript css html
+tags: codepen javascript css html jeykll
 ---
 * content
 {:toc}
