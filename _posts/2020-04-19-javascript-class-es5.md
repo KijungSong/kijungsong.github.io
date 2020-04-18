@@ -16,6 +16,7 @@ ES6부터는 `class 키워드`가 추가가 되면서 Java와 유사하게 Class
 ### 클래스 선언
 > 방법 1
 > 생성자 함수를 통해 객체의 필드 값을 초기화 하고 prototype에 메서드를 정의
+
 ```js
 var Animal = function (name) {
     this.name = name
@@ -31,6 +32,7 @@ console.log(animal.getName());
 
 > 방법 2
 > 객체에 메서드를 추가하고 필드는 클로저로 구현하여 은닉화 하여 사용하는 방법
+
 ```js
 var Animal = function (name) {
     var name = name;
@@ -46,6 +48,7 @@ console.log(animal.getName());
 
 > 방법 3
 > 2번 방식이랑 유사(클로저를 사용하는 점에서) 하지만 new 키워드를 안쓰고 함수 호출의 리턴 값으로 객체를 리턴
+
 ```js
 var Animal = function (name) {
     var name = name;
@@ -72,6 +75,7 @@ Animal 클래스는 return 값으로 객체를 리턴하기 때문에 결과물�
 var animal2 = new Animal('mung');
 console.log(animal2.getName());
 ```
+
 방법 1 vs 방법 2,3 의 가장 큰 차이는 `prototype 사용 여부`와 `은닉화`이다.
 #### prototype 사용여부의 차이
 `방법 1의 경우 정석적인? prototype을 통한 상속을 구현`하였다.
@@ -94,6 +98,7 @@ javascript에서도 class의 키워드가 추가되면서 기존 OOP로 개발�
 
 Animal 클래스를 상속받은 Dog 클래스를 예시로 든다.
 > 방법 1의 상속
+
 ```js
 // Animal 클래스 정의
 var Animal = function (name) {
@@ -120,6 +125,7 @@ console.log(dog.getAge());
 ```
 
 > 방법 2의 상속
+
 ```js
 // Animal 클래스 정의
 var Animal = function (name) {
@@ -144,7 +150,9 @@ var dog = new Dog('mung', 5);
 console.log(dog.getName());
 console.log(dog.getAge());
 ```
+
 > 방법 3의 상속
+
 ```js
 var Animal = function (name) {
     var name = name;
@@ -181,4 +189,5 @@ var dog2 = new Dog('mung2', 3);
 console.log(dog2.getName());
 console.log(dog2.getAge());
 ```
+
 클래스 상속의 경우도 방법 1 vs 방법 2,3 의 가장 큰 차이는 `prototype 사용 여부`와 `은닉화`로 보면 될 거 같다.
