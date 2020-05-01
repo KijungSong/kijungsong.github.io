@@ -10,21 +10,25 @@ tags: javascript es5 class object
 ES6부터는 `class 키워드`가 추가가 되면서 Java와 유사하게 Class를 선언하여 사용할 수 있게 되었지만 ES6 이전에도 `prototype 객체`를 사용하여 클래스와 유사하게 사용을 할 수 있다.
 다만 자유도가 너무 있다보니 비슷(?)하면서도 다양한 방식으로 사용이 가능하다.
 정답이 있진 않지만 그중에서 가장 보편적인 방법을 사용하는 것에 옳다고 본다. 하지만 다양한 사용 방식에 대해 이해를 하면 보다 효율적인 코딩이 되지 않을까 싶어 정리해본다.
+
 > `스코프`와 `프로토타입`에 대한 이해는 javascript의 기초이다. 다만 다른 언어들과 차이점들이 있어 쉽게 잊혀지는 것 같다. 아래 내용이 햇갈린다면 복습이 필요하다.
 
 ## ES5에서의 클래스
 ### 클래스 선언
+
 > 방법 1
 > 생성자 함수를 통해 객체의 필드 값을 초기화 하고 prototype에 메서드를 정의
 
 ```js
-var Animal = function (name) {
+var Animal = (function () {
+  function Animal(name) {
     this.name = name
-}
-
-Animal.prototype.getName = function() {
-    return this.name;
-}
+	}
+  Animal.prototype.getName = function() {
+      return this.name;
+  }
+  return Animal;
+}());
 
 var animal = new Animal('mung');
 console.log(animal.getName());
@@ -101,22 +105,28 @@ Animal 클래스를 상속받은 Dog 클래스를 예시로 든다.
 
 ```js
 // Animal 클래스 정의
-var Animal = function (name) {
-    this.name = name
-}
-Animal.prototype.getName = function() {
-    return this.name;
-}
+var Animal = (function () {
+  function Animal(name) {
+      this.name = name
+  }
+  Animal.prototype.getName = function() {
+      return this.name;
+  }
+  return Animal;
+}());
 
 // Dog 클래스 정의
-var Dog = function (name, age) {
-    Animal.call(this, name); // 부모 생성자 호출.
-    this.age = age;
-}
-Dog.prototype = new Animal(); // 프로토 타입 프로퍼티에 부모 객체 설정
-Dog.prototype.getAge = function() { // Dog 클래스 메서드 정의
-    return this.age;
-}
+var Dog = (function () {
+  function Dog(name, age) {
+      Animal.call(this, name); // 부모 생성자 호출.
+      this.age = age;
+  }
+  Dog.prototype = new Animal(); // 프로토 타입 프로퍼티에 부모 객체 설정
+  Dog.prototype.getAge = function() { // Dog 클래스 메서드 정의
+      return this.age;
+  }
+  return Dog;
+}());
 
 
 var dog = new Dog('mung', 5);
